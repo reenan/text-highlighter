@@ -224,7 +224,8 @@ export default class EditorContainer extends Component {
       <Editor editorState={editorState} showToolbar={showToolbar}
         toolbarPosition={toolbarPosition} highlightedTexts={highlightedTexts}
         loading={loading} setStyle={setStyle} setToolbarState={setToolbarState}
-        onChange={onChange} reset={reset} styleMap={customStylesReverseMapping} />
+        onChange={onChange} reset={reset} styleMap={styleMap} 
+        reverseStyleMap={customStylesReverseMapping} />
     );
   }
 }

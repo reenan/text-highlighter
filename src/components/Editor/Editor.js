@@ -17,6 +17,7 @@ export default ({
   onChange,
   reset,
   styleMap,
+  reverseStyleMap,
 }) => (
   <div className='editor-wrapper'>
     <Loader show={loading} />
@@ -36,7 +37,7 @@ export default ({
 
     <button onClick={reset} disabled={loading}>Reset</button>
 
-    <HighlightedList highlightedTexts={highlightedTexts} styleMap={styleMap} />
+    <HighlightedList highlightedTexts={highlightedTexts} reverseStyleMap={reverseStyleMap} />
   </div>
 )
 
@@ -50,11 +51,11 @@ const Loader = ({show}) =>
   </div>
 ) : null
 
-const HighlightedList = ({ highlightedTexts, styleMap }) => {
+const HighlightedList = ({ highlightedTexts, reverseStyleMap }) => {
   const content = Object.keys(highlightedTexts).map((key, i) => {
       return (
-        <li key={i} className={styleMap[key]}>
-          <span>{styleMap[key]}</span>
+        <li key={i} className={reverseStyleMap[key]}>
+          <span>{reverseStyleMap[key]}</span>
           <ul>
             {
               highlightedTexts[key].map((span, k) => {
