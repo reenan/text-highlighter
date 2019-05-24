@@ -1,17 +1,33 @@
 {
-  "name": "we-are-waes",
+  "name": "text-highlighter",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "draft-js": "^0.10.5",
+    "draftjs-utils": "^0.9.4",
+    "enzyme-adapter-react-16": "^1.13.1",
+    "install": "^0.12.2",
+    "jest-dom": "^3.2.2",
+    "npm": "^6.9.0",
     "react": "^16.8.6",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.js",
+      "!src/e2e",
+      "!src/index.js"
+    ]
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test": "react-scripts test ./components",
+    "test:e2e": "react-scripts test ./e2e"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +43,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "enzyme": "^3.9.0",
+    "faker": "^4.1.0",
+    "jest-puppeteer": "^4.1.1",
+    "node-sass": "^4.12.0",
+    "puppeteer": "^1.16.0",
+    "react-test-renderer": "^16.8.6",
+    "react-testing-library": "^7.0.1",
+    "sinon": "^7.3.2"
   }
 }

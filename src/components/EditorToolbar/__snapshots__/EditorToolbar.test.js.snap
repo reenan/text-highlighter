@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render properly with shouldRender true/false and showToolbar true/false 1`] = `null`;
+
+exports[`should render properly with shouldRender true/false and showToolbar true/false 2`] = `
+<div
+  className="toolbar "
+  style={Object {}}
+/>
+`;
+
+exports[`should render properly with shouldRender true/false and showToolbar true/false 3`] = `
+<div
+  className="toolbar open"
+  style={Object {}}
+/>
+`;
+
+exports[`should render style button without crashing with active true/false 1`] = `
+<span
+  className="style-button "
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "backgroundColor": "",
+    }
+  }
+/>
+`;
+
+exports[`should render style button without crashing with active true/false 2`] = `
+<span
+  className="style-button active"
+  onMouseDown={[Function]}
+  style={
+    Object {
+      "backgroundColor": "",
+    }
+  }
+/>
+`;
