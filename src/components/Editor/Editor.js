@@ -42,13 +42,13 @@ export default ({
 
 const Loader = ({show}) =>
   show ? (
-    <div className='loading'>
-      <div className='loader'>
-        {/* Needed elements to render loader properly */}
-        <div></div><div></div><div></div><div></div>
-      </div>
+  <div className='loading'>
+    <div className='loader'>
+      {/* Needed elements to render loader properly */}
+      <div></div><div></div><div></div><div></div>
     </div>
-  ) : null
+  </div>
+) : null
 
 const HighlightedList = ({ highlightedTexts, styleMap }) => {
   const content = Object.keys(highlightedTexts).map((key, i) => {
