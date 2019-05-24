@@ -215,32 +215,6 @@ export default class EditorContainer extends Component {
   }
 }
 
-
-const HighlightedList = ({highlightedTexts}) => {
-  const content = Object.keys(highlightedTexts).map((key, i) => {
-      return (
-        <li key={i} className={customStylesReverseMapping[key]}>
-          <span>{customStylesReverseMapping[key]}</span>
-          <ul>
-            {
-              highlightedTexts[key].map((span, k) => {
-                return <li key={k}>{span.text}</li>
-              })
-            } 
-          </ul>
-      </li>
-      )
-  });
-
-  return (
-   <div className='highlighted-list'>
-    <ul>
-      { content.length > 0 ? content : <li>Nothing highlighted</li>}
-    </ul>
-   </div>
-  )
-}
-
 const customStyles = {
   'red': 'rgb(249, 85, 85)',
   'yellow': 'rgb(236, 236, 0)',

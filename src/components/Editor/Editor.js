@@ -15,7 +15,8 @@ export default ({
   setStyle,
   setToolbarState,
   onChange,
-  reset
+  reset,
+  styleMap,
 }) => (
   <div className='editor-wrapper'>
     <Loader show={loading} />
@@ -35,7 +36,7 @@ export default ({
 
     <button onClick={reset} disabled={loading}>Reset</button>
 
-    <HighlightedList highlightedTexts={highlightedTexts} />
+    <HighlightedList highlightedTexts={highlightedTexts} styleMap={styleMap} />
   </div>
 )
 
@@ -49,11 +50,11 @@ const Loader = ({show}) =>
     </div>
   ) : null
 
-const HighlightedList = ({highlightedTexts}) => {
+const HighlightedList = ({ highlightedTexts, styleMap }) => {
   const content = Object.keys(highlightedTexts).map((key, i) => {
       return (
-        <li key={i} className={customStylesReverseMapping[key]}>
-          <span>{customStylesReverseMapping[key]}</span>
+        <li key={i} className={styleMap[key]}>
+          <span>{styleMap[key]}</span>
           <ul>
             {
               highlightedTexts[key].map((span, k) => {
@@ -72,20 +73,4 @@ const HighlightedList = ({highlightedTexts}) => {
     </ul>
    </div>
   )
-}
-
-const customStyles = {
-  'red': 'rgb(249, 85, 85)',
-  'yellow': 'rgb(236, 236, 0)',
-  'green': 'rgb(52, 197, 52)',
-}
-
-const customStylesReverseMapping = {};
-const styleMap = {};
-
-for (let styleName of Object.keys(customStyles)) {
-  let styleValue = customStyles[styleName];
-
-  customStylesReverseMapping[styleValue] = styleName;
-  styleMap[styleName] = { backgroundColor: styleValue };
 }
