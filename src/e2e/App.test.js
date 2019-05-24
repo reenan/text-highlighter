@@ -159,7 +159,7 @@ describe('select text should provide a toolbar and should be able to highlight t
       await styleButton.click();
       
       const highlightedTextList = await page.$('.highlighted-list');
-      expect(highlightedTextList).toBeFalsy();
+      expect(highlightedTextList).toBeTruthy();
       done();
 
     }, 500)
