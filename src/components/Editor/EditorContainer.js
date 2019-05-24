@@ -6,7 +6,21 @@ import { isMobile } from 'react-device-detect';
 import Editor from './Editor.js';
 import './Editor.scss';
 
+const customStyles = {
+  'red': 'rgb(249, 85, 85)',
+  'yellow': 'rgb(236, 236, 0)',
+  'green': 'rgb(52, 197, 52)',
+}
 
+const customStylesReverseMapping = {};
+const styleMap = {};
+
+for (let styleName of Object.keys(customStyles)) {
+  let styleValue = customStyles[styleName];
+
+  customStylesReverseMapping[styleValue] = styleName;
+  styleMap[styleName] = { backgroundColor: styleValue };
+}
 
 export default class EditorContainer extends Component {
   constructor(props) {
@@ -210,23 +224,7 @@ export default class EditorContainer extends Component {
       <Editor editorState={editorState} showToolbar={showToolbar}
         toolbarPosition={toolbarPosition} highlightedTexts={highlightedTexts}
         loading={loading} setStyle={setStyle} setToolbarState={setToolbarState}
-        onChange={onChange} reset={reset} />
+        onChange={onChange} reset={reset} styleMap={customStylesReverseMapping} />
     );
   }
-}
-
-const customStyles = {
-  'red': 'rgb(249, 85, 85)',
-  'yellow': 'rgb(236, 236, 0)',
-  'green': 'rgb(52, 197, 52)',
-}
-
-const customStylesReverseMapping = {};
-const styleMap = {};
-
-for (let styleName of Object.keys(customStyles)) {
-  let styleValue = customStyles[styleName];
-
-  customStylesReverseMapping[styleValue] = styleName;
-  styleMap[styleName] = { backgroundColor: styleValue };
 }
